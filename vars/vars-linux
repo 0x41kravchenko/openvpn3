@@ -1,5 +1,5 @@
-export JAVA_DIR=/usr/lib/jvm/java-7-openjdk-amd64
-[ -z "$DEP_DIR" ] && export DEP_DIR=$HOME/linux
+export JAVA_DIR=/usr/lib/jvm/default
+[ -z "$DEP_DIR" ] && export DEP_DIR=$HOME/vpn/openvpn3lib/deps
 export PLATFORM=linux
 export DEBUG_BUILD=0
 LTO_FLAGS="-flto=4 -Wl,--no-as-needed" # add to OTHER_COMPILER_FLAGS for LTO
