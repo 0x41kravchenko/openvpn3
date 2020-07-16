@@ -48,7 +48,7 @@ public class OpenVPNClientThread extends ClientAPI_OpenVPNClient implements Runn
 	void done(ClientAPI_Status status);
 
 	// Called to "protect" a socket from being routed through the tunnel
-	boolean socket_protect(int socket);
+	boolean socket_protect(int socket, String remote, boolean ipv6);
 
 	// When a connection is close to timeout, the core will call this
 	// method.  If it returns false, the core will disconnect with a
@@ -201,10 +201,10 @@ public class OpenVPNClientThread extends ClientAPI_OpenVPNClient implements Runn
     // ClientAPI_OpenVPNClient (C++ class) overrides
 
     @Override
-    public boolean socket_protect(int socket) {
+    public boolean socket_protect(int socket, String remote, boolean ipv6) {
 	EventReceiver p = parent;
 	if (p != null)
-	    return p.socket_protect(socket);
+	    return p.socket_protect(socket, remote, ipv6);
 	else
 	    return false;
     }

@@ -125,7 +125,7 @@ public class Client implements OpenVPNClientThread.EventReceiver {
     }
 
     @Override
-    public boolean socket_protect(int socket)
+    public boolean socket_protect(int socket, String remote, boolean ipv6)
     {
 	return false;
     }
