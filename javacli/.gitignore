@@ -5,3 +5,4 @@ ovpncli.java
 ovpncliJNI.java
 ClientAPI_*.java
 SWIGTYPE_*.java
+*.class
