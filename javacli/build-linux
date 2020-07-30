@@ -13,7 +13,6 @@ if [ -z "$O3" ]; then
 fi
 
 TARGET=linux
-JINC="-I/usr/local/java/jdk1.7.0_55/include -I/usr/local/java/jdk1.7.0_55/include/linux"
 
 cd $O3/core/javacli
 git clean -q -fXd .
@@ -79,7 +78,8 @@ g++ \
     $vis1 $vis2 \
     -I$O3/core/client \
     -I$O3/core \
-    $JINC \
+    -I$JAVA_DIR/include \
+    -I$JAVA_DIR/include/linux \
     $ssl_libdir \
     -L$DEP_DIR/lz4/lz4-$PLATFORM/lib \
     ovpncli_wrap.cxx \
